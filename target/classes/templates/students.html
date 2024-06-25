@@ -97,8 +97,9 @@
                           <tr>
                             <th>NIS</th>
                             <th>Nama</th>
+                            <th>Kelas</th>
+                            <th>Jenis Kelamin</th>
                             <th>Alamat</th>
-                            <th>Email</th>
                             <th>Telepon</th>
                             <th>Aksi</th>
                           </tr>
@@ -107,8 +108,9 @@
                           <tr th:each="student: ${students}">
                             <td th:text="${student.nis}"></td>
                             <td th:text="${student.name}"></td>
+                            <td th:text="${student.kelas}"></td>
+                            <td th:text="${student.jenisKelamin}"></td>
                             <td th:text="${student.alamat}"></td>
-                            <td th:text="${student.email}"></td>
                             <td th:text="${student.noTelephone}"></td>
                             <td class="button-cell">
                               <a th:href="@{/students/edit/{id}(id=${student.id})}" class="btn btn-primary">Ubah</a>

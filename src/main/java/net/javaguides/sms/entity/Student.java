@@ -13,8 +13,6 @@ public class Student {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "email")
-    private String email;
 
     @Column(name = "nis", unique = true, nullable = false)
     private String nis;
@@ -25,16 +23,23 @@ public class Student {
     @Column(name = "no_telephone")
     private String noTelephone;
 
+    @Column(name = "jenis_kelamin")
+    private String jenisKelamin;
+
+    @Column(name = "kelas")
+    private String kelas;
+
     public Student() {
     }
 
-    public Student(String name, String email, String nis, String alamat, String noTelephone) {
+    public Student(String name,  String nis, String alamat, String noTelephone, String jenisKelamin, String kelas) {
         super();
         this.name = name;
-        this.email = email;
         this.nis = nis;
         this.alamat = alamat;
         this.noTelephone = noTelephone;
+        this.jenisKelamin = jenisKelamin;
+        this.kelas = kelas;
     }
 
     public Long getId() {
@@ -53,13 +58,7 @@ public class Student {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public String getNis() {
         return nis;
@@ -83,5 +82,21 @@ public class Student {
 
     public void setNoTelephone(String noTelephone) {
         this.noTelephone = noTelephone;
+    }
+
+    public String getJenisKelamin() {
+        return jenisKelamin;
+    }
+
+    public void setJenisKelamin(String jenisKelamin) {
+        this.jenisKelamin = jenisKelamin;
+    }
+
+    public String getKelas() {
+        return kelas;
+    }
+
+    public void setKelas(String kelas) {
+        this.kelas = kelas;
     }
 }

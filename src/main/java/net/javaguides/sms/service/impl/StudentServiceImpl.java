@@ -47,5 +47,6 @@ public class StudentServiceImpl implements StudentService{
     public long getTotalStudents() {
         return studentRepository.count();
     }
+	
 
 }

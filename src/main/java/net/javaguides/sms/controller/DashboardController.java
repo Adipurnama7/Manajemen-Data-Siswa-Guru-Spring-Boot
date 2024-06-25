@@ -23,6 +23,7 @@ public class DashboardController {
         long totalStudents = studentService.getTotalStudents();
         model.addAttribute("totalTeachers", totalTeachers);
         model.addAttribute("totalStudents", totalStudents);
+        
         return "dashboard";
     }
 }

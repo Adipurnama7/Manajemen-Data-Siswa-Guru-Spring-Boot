@@ -82,20 +82,30 @@
                 <div class="card-body">
                   <form th:action="@{/students/{id}(id=${student.id})}" th:object="${student}" method="POST">
                     <div class="form-group">
-                      <label> Nama Siswa </label>
-                      <input type="text" name="name" th:field="*{name}" class="form-control" placeholder="Masukkan Nama Siswa" required />
-                    </div>
-
-                    <div class="form-group">
-                      <label> Email Siswa </label>
-                      <input type="email" name="email" th:field="*{email}" class="form-control" placeholder="Masukkan Email Siswa" required />
-                    </div>
-
-                    <div class="form-group">
                       <label> NIS Siswa </label>
                       <input type="text" name="nis" th:field="*{nis}" class="form-control" placeholder="Masukkan NIS Siswa" required />
                     </div>
-
+                    <div class="form-group">
+                      <label> Nama Siswa </label>
+                      <input type="text" name="name" th:field="*{name}" class="form-control" placeholder="Masukkan Nama Siswa" required />
+                    </div>
+                    <div class="form-group">
+                      <label> Kelas </label>
+                      <select name="kelas" th:field="*{kelas}" class="form-control" required>
+                        <option value="" disabled>Pilih Kelas</option>
+                        <option value="10" th:selected="${student.kelas == '10'}">10</option>
+                        <option value="11" th:selected="${student.kelas == '11'}">11</option>
+                        <option value="12" th:selected="${student.kelas == '12'}">12</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label> Jenis Kelamin </label>
+                      <select name="jenisKelamin" th:field="*{jenisKelamin}" class="form-control" required>
+                        <option value="" disabled>Pilih Jenis Kelamin</option>
+                        <option value="Laki-laki" th:selected="${student.jenisKelamin == 'Laki-laki'}">Laki-laki</option>
+                        <option value="Perempuan" th:selected="${student.jenisKelamin == 'Perempuan'}">Perempuan</option>
+                      </select>
+                    </div>
                     <div class="form-group">
                       <label> Alamat Siswa </label>
                       <input type="text" name="alamat" th:field="*{alamat}" class="form-control" placeholder="Masukkan Alamat Siswa" required />
@@ -105,7 +115,7 @@
                       <label> No Telepon Siswa </label>
                       <input type="text" name="noTelephone" th:field="*{noTelephone}" class="form-control" placeholder="Masukkan No Telepon Siswa" required />
                     </div>
-
+                    <br />
                     <div class="box-footer">
                       <button type="submit" class="btn btn-primary">Kirim</button>
                     </div>

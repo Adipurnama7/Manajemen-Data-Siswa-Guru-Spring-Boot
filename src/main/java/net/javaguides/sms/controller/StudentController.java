@@ -59,7 +59,6 @@ public class StudentController {
         Student existingStudent = studentService.getStudentById(id);
         existingStudent.setId(id);
         existingStudent.setName(student.getName());
-        existingStudent.setEmail(student.getEmail());
         existingStudent.setNis(student.getNis());
         existingStudent.setAlamat(student.getAlamat());
         existingStudent.setNoTelephone(student.getNoTelephone());
