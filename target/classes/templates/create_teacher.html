@@ -76,12 +76,21 @@
                   <div class="card-body">
                     <form th:action="@{/teachers}" th:object="${teacher}" method="POST">
                       <div class="form-group">
+                        <label>NIP</label>
+                        <input type="text" class="form-control" th:field="*{nip}" placeholder="Masukkan NIP Guru" required />
+                      </div>
+                      <div class="form-group">
                         <label>Nama</label>
                         <input type="text" class="form-control" th:field="*{name}" placeholder="Masukkan Nama Guru" required />
                       </div>
+
                       <div class="form-group">
-                        <label>NIP</label>
-                        <input type="text" class="form-control" th:field="*{nip}" placeholder="Masukkan NIP Guru" required />
+                        <label>Jenis Kelamin</label>
+                        <select class="form-control" th:field="*{jenisKelamin}" required>
+                          <option value="">Pilih Jenis Kelamin</option>
+                          <option value="Laki-laki">Laki-laki</option>
+                          <option value="Perempuan">Perempuan</option>
+                        </select>
                       </div>
                       <div class="form-group">
                         <label>Email</label>
@@ -95,6 +104,7 @@
                         <label>No Telepon</label>
                         <input type="text" class="form-control" th:field="*{noTelephone}" placeholder="Masukkan No Telepon Guru" required />
                       </div>
+
                       <br />
                       <button type="submit" class="btn btn-primary">Simpan</button>
                     </form>

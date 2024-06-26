@@ -25,16 +25,20 @@ public class Teacher {
     @Column(name = "no_telephone")
     private String noTelephone;
 
+    @Column(name = "jenis_kelamin", nullable = false)
+    private String jenisKelamin;
+
     public Teacher() {
     }
 
-    public Teacher(String name, String email, String nip, String alamat, String noTelephone) {
+    public Teacher(String name, String email, String nip, String alamat, String noTelephone, String jenisKelamin) {
         super();
         this.name = name;
         this.email = email;
         this.nip = nip;
         this.alamat = alamat;
         this.noTelephone = noTelephone;
+        this.jenisKelamin = jenisKelamin;
     }
 
     public Long getId() {
@@ -85,7 +89,11 @@ public class Teacher {
         this.noTelephone = noTelephone;
     }
 
-  
+    public String getJenisKelamin() {
+        return jenisKelamin;
+    }
 
-   
+    public void setJenisKelamin(String jenisKelamin) {
+        this.jenisKelamin = jenisKelamin;
+    }
 }

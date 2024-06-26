@@ -38,12 +38,10 @@
                 <nav class="sb-sidenav-menu-nested nav">
                   <a class="nav-link" th:href="@{/students}">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    <!-- Icon untuk Lihat Data Siswa -->
                     Lihat Data Siswa
                   </a>
                   <a class="nav-link" th:href="@{/students/new}">
                     <div class="sb-nav-link-icon"><i class="fas fa-user-plus"></i></div>
-                    <!-- Icon untuk Tambah Siswa -->
                     Tambah Siswa
                   </a>
                 </nav>
@@ -57,7 +55,6 @@
                 <nav class="sb-sidenav-menu-nested nav">
                   <a class="nav-link" th:href="@{/teachers}">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    <!-- Icon untuk Lihat Data Siswa -->
                     Lihat Data Guru
                   </a>
                   <a class="nav-link" th:href="@{/teachers/new}">
@@ -80,13 +77,22 @@
                   <div class="card-body">
                     <form th:action="@{/teachers/{id}(id=${teacher.id})}" th:object="${teacher}" method="POST">
                       <input type="hidden" th:field="*{id}" />
+
+                      <div class="form-group">
+                        <label>NIP</label>
+                        <input type="text" class="form-control" th:field="*{nip}" placeholder="Masukkan NIP Guru" required />
+                      </div>
                       <div class="form-group">
                         <label>Nama</label>
                         <input type="text" class="form-control" th:field="*{name}" placeholder="Masukkan Nama Guru" required />
                       </div>
                       <div class="form-group">
-                        <label>NIP</label>
-                        <input type="text" class="form-control" th:field="*{nip}" placeholder="Masukkan NIP Guru" required />
+                        <label>Jenis Kelamin</label>
+                        <select class="form-control" th:field="*{jenisKelamin}" required>
+                          <option value="" disabled>Pilih Jenis Kelamin</option>
+                          <option value="Laki-laki" th:selected="${teacher.jenisKelamin == 'Laki-laki'}">Laki-laki</option>
+                          <option value="Perempuan" th:selected="${teacher.jenisKelamin == 'Perempuan'}">Perempuan</option>
+                        </select>
                       </div>
                       <div class="form-group">
                         <label>Alamat</label>
@@ -100,6 +106,7 @@
                         <label>No Telepon</label>
                         <input type="text" class="form-control" th:field="*{noTelephone}" placeholder="Masukkan No Telepon Guru" required />
                       </div>
+
                       <br />
                       <div class="box-footer">
                         <button type="submit" class="btn btn-primary">Simpan Perubahan</button>

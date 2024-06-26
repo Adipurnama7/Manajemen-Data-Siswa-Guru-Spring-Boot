@@ -93,9 +93,11 @@
                           <tr>
                             <th>NIP</th>
                             <th>Nama</th>
+                            <th>Jenis Kelamin</th>
                             <th>Alamat</th>
                             <th>Email</th>
                             <th>Telepon</th>
+
                             <th>Aksi</th>
                           </tr>
                         </thead>
@@ -103,9 +105,11 @@
                           <tr th:each="teacher: ${teachers}">
                             <td th:text="${teacher.nip}"></td>
                             <td th:text="${teacher.name}"></td>
+                            <td th:text="${teacher.jenisKelamin}"></td>
                             <td th:text="${teacher.alamat}"></td>
                             <td th:text="${teacher.email}"></td>
                             <td th:text="${teacher.noTelephone}"></td>
+
                             <td class="button-cell">
                               <a th:href="@{/teachers/edit/{id}(id=${teacher.id})}" class="btn btn-primary">Ubah</a>
                               <a th:href="@{/teachers/delete/{id}(id=${teacher.id})}" class="btn btn-danger">Hapus</a>
